@@ -41,17 +41,24 @@ public class JmJwsSamplerGui extends AbstractSamplerGui {
         super.configure(element);
     }
 
-//    @Override
-//    public String getStaticLabel() {
-//        log.info("getStaticLabel called");
-////        return "Jm Jws Sampler";
-//        return null;
-//    }
+    /**
+     * JMeterのSampler一覧などに表示される時の名前
+     * @return
+     */
+    @Override
+    public String getStaticLabel() {
+        log.info("getStaticLabel called");
+        return "JmJwsSampler";
+    }
 
+    /**
+     * このGuiクラスが使用するSamplerの名前。
+     * どうやらリフレクションを使っているらしく、ちゃんとした値を返さないとJMeter起動時に謎のNullPoで起動エラーになる
+     */
     @Override
     public String getLabelResource() {
         log.info("getLabelResource called");
-        return null;
+        return "JmJwsSampler";
     }
 
     @Override
